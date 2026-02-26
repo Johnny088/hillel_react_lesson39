@@ -4,8 +4,6 @@ interface Props {
   studentsList: studentType[];
 }
 export const StudentsList = ({ studentsList }: Props) => {
-  console.log("Student's list");
-  console.log(studentsList);
   return (
     <ul>
       {studentsList.map(student => (
