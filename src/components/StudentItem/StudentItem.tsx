@@ -9,7 +9,7 @@ export const StudentItem = ({ student }: Props) => {
       <p>Name: {student.name}</p>
       <p>Age: {student.age}</p>
       <p>Course:{student.course}</p>
-      <p>{student.online === 'online' ? 'Online' : 'Offline'}</p>
+      <p>{student.isOnline === true ? 'Online' : 'Offline'}</p>
       <img src={student.avatar} alt="avatar" />
     </>
   );

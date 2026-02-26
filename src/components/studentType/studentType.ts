@@ -1,8 +1,8 @@
 export interface studentType {
   id: number;
   name: string;
-  age: string;
+  age: number;
   course: string;
-  online: string;
+  isOnline: boolean;
   avatar: string;
 }
