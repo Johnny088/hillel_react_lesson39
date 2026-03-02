@@ -1,6 +1,6 @@
-import { type studentType } from '../studentType/studentType';
+import { type StudentType } from '../../types/studentType';
 interface Props {
-  student: studentType;
+  student: StudentType;
 }
 
 export const StudentItem = ({ student }: Props) => {
