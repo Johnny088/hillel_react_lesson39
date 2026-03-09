@@ -1,11 +1,19 @@
 import { type StudentType } from '../../types/studentType';
 interface Props {
   student: StudentType;
+  deleteItem: (id: number) => void;
+  changeStatus: (id: number) => void;
 }
 
-export const StudentItem = ({ student }: Props) => {
+export const StudentItem = ({ student, deleteItem, changeStatus }: Props) => {
   const viewHandler = () => {
     console.log('clicked');
+  };
+  const deleteHandler = () => {
+    deleteItem(student.id);
+  };
+  const switchStatus = () => {
+    changeStatus(student.id);
   };
   return (
     <>
@@ -16,7 +24,17 @@ export const StudentItem = ({ student }: Props) => {
       <p>Age: {student.age}</p>
       <p>Course:{student.course}</p>
       <p>{student.isOnline === true ? 'Online' : 'Offline'}</p>
-      <button onClick={viewHandler}>View ptofile</button>
+      <ul>
+        <li>
+          <button onClick={viewHandler}>View ptofile</button>
+        </li>
+        <li>
+          <button onClick={deleteHandler}>Delete</button>
+        </li>
+        <li>
+          <button onClick={switchStatus}>Change status</button>
+        </li>
+      </ul>
     </>
   );
 };
