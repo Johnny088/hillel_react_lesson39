@@ -6,7 +6,7 @@ import { CreateStudentForm } from '../CreateStudentForm/CreateStudentForm';
 import './App.css';
 export const App = () => {
   const [students, setStudents] = useState(data);
-  const [isFormVisible, setIsFormVisible] = useState(true);
+  const [isFormVisible, setIsFormVisible] = useState(false);
   const deleteStudent = (id: number) => {
     setStudents(prevStudents => prevStudents.filter(x => x.id !== id));
   };
