@@ -18,7 +18,7 @@ export const StudentItem = ({ student, deleteItem, changeStatus }: Props) => {
   return (
     <>
       <p>
-        <img src={student.avatar} alt="avatar" />
+        <img src={student.avatar} alt="avatar" width={150} height={150} />
       </p>
       <p>Name: {student.name}</p>
       <p>Age: {student.age}</p>
