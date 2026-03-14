@@ -1,9 +1,11 @@
 import './CreateStudentsForm.css';
 import { type StudentType } from '../../types/studentType';
+import { useId } from 'react';
 interface Props {
   onAdd: (newStudent: StudentType) => void;
 }
 export const CreateStudentForm = ({ onAdd }: Props) => {
+  const id = useId();
   const formHandler = (formData: FormData) => {
     const name = formData.get('name') as string;
     const age = Number(formData.get('age'));
@@ -22,14 +24,14 @@ export const CreateStudentForm = ({ onAdd }: Props) => {
   };
   return (
     <form action={formHandler} className="form">
-      <label htmlFor="name">Name</label>
-      <input required type="text" name="name" id="name" />
-      <label htmlFor="age">Age</label>
-      <input required type="number" name="age" id="age" />
-      <label htmlFor="course">Course</label>
-      <input required type="text" name="course" id="course" />
-      <label htmlFor="avatar">image</label>
-      <input type="text" name="avatar" id="avatar" />
+      <label htmlFor={`name-${id}`}>Name</label>
+      <input required type="text" name="name" id={`name-${id}`} />
+      <label htmlFor={`age-${id}`}>Age</label>
+      <input required type="number" name="age" id={`age-${id}`} />
+      <label htmlFor={`course-${id}`}>Course</label>
+      <input required type="text" name="course" id={`course-${id}`} />
+      <label htmlFor={`avatar-${id}`}>image</label>
+      <input type="text" name="avatar" id={`avatar-${id}`} />
       <button>Submit</button>
     </form>
   );
