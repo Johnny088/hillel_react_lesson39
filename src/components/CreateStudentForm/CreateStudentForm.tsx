@@ -23,13 +23,13 @@ export const CreateStudentForm = ({ onAdd }: Props) => {
   return (
     <form action={formHandler} className="form">
       <label htmlFor="name">Name</label>
-      <input required type="text" name="name" />
+      <input required type="text" name="name" id="name" />
       <label htmlFor="age">Age</label>
-      <input required type="number" name="age" />
+      <input required type="number" name="age" id="age" />
       <label htmlFor="course">Course</label>
-      <input required type="text" name="course" />
+      <input required type="text" name="course" id="course" />
       <label htmlFor="avatar">image</label>
-      <input type="text" name="avatar" />
+      <input type="text" name="avatar" id="avatar" />
       <button>Submit</button>
     </form>
   );

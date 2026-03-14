@@ -15,20 +15,23 @@ export const App = () => {
       prev.map(st => (st.id === id ? { ...st, isOnline: !st.isOnline } : st)),
     );
   };
-  const formRender = () => {
+  const toggleFormVisibility = () => {
     setIsFormVisible(!isFormVisible);
   };
   const addStudent = (newStudent: StudentType) => {
-    setStudents([...students, newStudent]);
+    setStudents(prevStudent => [...prevStudent, newStudent]);
+    toggleFormVisibility();
   };
   return (
     <>
-      <StudentsList
-        studentsList={students}
-        deleteItem={deleteStudent}
-        changeStatus={changeStatus}
-      />
-      <button onClick={formRender}>
+      {students.length > 0 && (
+        <StudentsList
+          studentsList={students}
+          deleteItem={deleteStudent}
+          changeStatus={changeStatus}
+        />
+      )}
+      <button className="formBtn" onClick={toggleFormVisibility}>
         {isFormVisible ? 'Hide form' : 'Add student'}
       </button>
       {isFormVisible && <CreateStudentForm onAdd={addStudent} />}

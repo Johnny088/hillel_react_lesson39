@@ -26,7 +26,7 @@ export const StudentItem = ({ student, deleteItem, changeStatus }: Props) => {
       <p>{student.isOnline === true ? 'Online' : 'Offline'}</p>
       <ul>
         <li>
-          <button onClick={viewHandler}>View ptofile</button>
+          <button onClick={viewHandler}>View profile</button>
         </li>
         <li>
           <button onClick={deleteHandler}>Delete</button>
